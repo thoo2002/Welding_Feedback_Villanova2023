@@ -1,18 +1,17 @@
-//
-//  Real_timeApp.swift
-//  Real_time
-//
-//  Created by Alex Rhodes on 8/29/23.
-//
-
 import SwiftUI
 
 @main
 struct Real_timeApp: App {
+    @State private var showSplash = true
+
     var body: some Scene {
         WindowGroup {
-            SplashView()
-            ContentView()
+            if showSplash {
+                SplashView(showSplash: $showSplash)
+            } else {
+                ContentView()
+            }
         }
     }
 }
+
