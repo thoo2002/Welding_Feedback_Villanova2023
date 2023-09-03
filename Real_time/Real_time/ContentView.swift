@@ -14,8 +14,15 @@ struct ContentView: View {
                                            .font(.title)
                                            .multilineTextAlignment(.center)
                                            .foregroundColor(Color(white: 90))
-                    RectangleButton(color: Color.orange, title: " New Project ")
-                    RectangleButton(color: Color.orange, title: "Saved Project")
+                    
+                    // Use NavigationLink directly for navigation
+                    NavigationLink(destination: NewProjectView()) {
+                        RectangleButton(color: Color.orange, title: " New Project ")
+                    }
+                    
+                    NavigationLink(destination: SavedProjectView()) {
+                        RectangleButton(color: Color.orange, title: "Saved Project")
+                    }
                 }
                 .padding()
                 .cornerRadius(10)
@@ -31,15 +38,11 @@ struct RectangleButton: View {
     var title: String
     
     var body: some View {
-        Button(action: {
-            // Handle button action here
-        }) {
-            Text(title)
-                .foregroundColor(.black)
-                .padding()
-                .background(color)
-                .cornerRadius(10)
-        }
+        Text(title)
+            .foregroundColor(.black)
+            .padding()
+            .background(color)
+            .cornerRadius(10)
     }
 }
 
@@ -48,3 +51,6 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
+
