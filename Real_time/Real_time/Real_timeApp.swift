@@ -1,4 +1,5 @@
 import SwiftUI
+import CoreBluetooth
 
 @main
 struct Real_timeApp: App {
