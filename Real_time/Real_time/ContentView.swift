@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    let bluetoothManager = BluetoothManager()
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -14,6 +16,8 @@ struct ContentView: View {
                                            .font(.title)
                                            .multilineTextAlignment(.center)
                                            .foregroundColor(Color(white: 90))
+                    
+                    
                     
                     // Use NavigationLink directly for navigation
                     NavigationLink(destination: NewProjectView()) {
@@ -51,6 +55,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
 
 
