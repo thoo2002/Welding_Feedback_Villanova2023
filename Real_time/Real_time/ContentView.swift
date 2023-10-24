@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let bluetoothManager = BluetoothManager()
+   // let bluetoothManager = BluetoothManager()
     
     var body: some View {
         NavigationView {
