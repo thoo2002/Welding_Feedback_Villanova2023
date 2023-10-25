@@ -15,8 +15,8 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     private var peripheral: CBPeripheral!
     
     // UUIDs for service and characteristic
-    private let serviceUUID = CBUUID(string: "YOUR_SERVICE_UUID")
-    private let characteristicUUID = CBUUID(string: "YOUR_CHARACTERISTIC_UUID")
+    private let serviceUUID = CBUUID(string: "00002A02-0000-1000-8000-00805F9B34FB")
+    private let characteristicUUID = CBUUID(string: "00002A00-0000-1000-8000-00805F9B34FB")
     
     // Initialize Bluetooth manager
     override init() {
