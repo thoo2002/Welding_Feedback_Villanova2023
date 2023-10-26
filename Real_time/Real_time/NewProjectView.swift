@@ -25,13 +25,13 @@ struct GaugeView: View {
 }
 
 struct NewProjectView: View {
-    @State private var gauge1Value: Double = 50
+    @State private var gauge1Value: Double = 500
     @State private var gauge2Value: Double = 75
     @State private var gauge3Value: Double = 90
     @State private var gauge4Value: Double = 25
     @State private var gauge5Value: Double = 10
 
-    @State private var gauge1Range: ClosedRange<Double> = 0...100
+    @State private var gauge1Range: ClosedRange<Double> = 0...1000
     @State private var gauge2Range: ClosedRange<Double> = 0...100
     @State private var gauge3Range: ClosedRange<Double> = 0...100
     @State private var gauge4Range: ClosedRange<Double> = 0...100
