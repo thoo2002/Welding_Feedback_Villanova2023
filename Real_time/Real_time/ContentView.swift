@@ -27,6 +27,9 @@ struct ContentView: View {
                     NavigationLink(destination: SavedProjectView()) {
                         RectangleButton(color: Color.orange, title: "Saved Project")
                     }
+                    NavigationLink(destination: AIView()) {
+                        RectangleButton(color: Color.orange, title: "AI Assistant")
+                    }
                 }
                 .padding()
                 .cornerRadius(10)
