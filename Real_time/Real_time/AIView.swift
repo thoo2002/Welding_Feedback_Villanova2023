@@ -21,6 +21,9 @@ struct AIView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     ForEach(messages, id: \.self) { message in
                         Text(message)
+                        Divider()
+                            .background(Color.orange) // Set the divider color to orange
+                            .frame(height: 4) // Set the divider height to make it thicker
                     }
                 }
             }
