@@ -23,6 +23,7 @@
 		FADCCE412AF3659400A59CEE /* AIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADCCE3C2AF3659300A59CEE /* AIView.swift */; };
 		FADCCE422AF3659400A59CEE /* ChatGPT.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADCCE3D2AF3659300A59CEE /* ChatGPT.swift */; };
 		FADCCE442AF366AA00A59CEE /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADCCE432AF366AA00A59CEE /* DataHandler.swift */; };
+		FADCCE472AF4264D00A59CEE /* SaveFileCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADCCE462AF4264D00A59CEE /* SaveFileCreationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		FADCCE3D2AF3659300A59CEE /* ChatGPT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatGPT.swift; sourceTree = "<group>"; };
 		FADCCE432AF366AA00A59CEE /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		FADCCE452AF3671C00A59CEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FADCCE462AF4264D00A59CEE /* SaveFileCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFileCreationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				FADCCE392AF3659300A59CEE /* BluetoothManager.swift */,
 				FADCCE3D2AF3659300A59CEE /* ChatGPT.swift */,
 				FADCCE3A2AF3659300A59CEE /* NewProjectView.swift */,
+				FADCCE462AF4264D00A59CEE /* SaveFileCreationView.swift */,
 				FADCCE3B2AF3659300A59CEE /* SavedProjectView.swift */,
 				FADCCE432AF366AA00A59CEE /* DataHandler.swift */,
 				FADCCE372AF3651E00A59CEE /* SplashView.swift */,
@@ -290,6 +293,7 @@
 				FADCCE442AF366AA00A59CEE /* DataHandler.swift in Sources */,
 				FADCCE412AF3659400A59CEE /* AIView.swift in Sources */,
 				FADCCE3F2AF3659400A59CEE /* NewProjectView.swift in Sources */,
+				FADCCE472AF4264D00A59CEE /* SaveFileCreationView.swift in Sources */,
 				FADCCE0B2AF3612900A59CEE /* ContentView.swift in Sources */,
 				FADCCE382AF3651E00A59CEE /* SplashView.swift in Sources */,
 				FADCCE092AF3612900A59CEE /* RealTime2App.swift in Sources */,

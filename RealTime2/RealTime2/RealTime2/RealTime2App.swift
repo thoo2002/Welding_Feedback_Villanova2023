@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreBluetooth
+import CoreData
 
 @main
 struct RealTime2App: App {

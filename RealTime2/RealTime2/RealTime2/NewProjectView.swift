@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct GaugeView: View {
     var value: Double
@@ -13,62 +14,70 @@ struct GaugeView: View {
     var range: ClosedRange<Double>
 
     var body: some View {
-           VStack {
-               Text(label)
-                   .font(.headline)
-               Gauge(value: value, in: range) {
-                   Text(String(format: "%.2f", value))
-                       .font(.system(size: 28, weight: .bold, design: .rounded))
-               }
-           }
-           .padding()
-       }
-   }
-
+        VStack {
+            Text(label)
+                .font(.headline)
+            Gauge(value: value, in: range) {
+                Text(String(format: "%.2f", value))
+                    .font(.system(size: 28, weight: .bold, design: .rounded))
+            }
+        }
+        .padding()
+    }
+}
 
 struct NewProjectView: View {
-    @State private var gauge1Value: Double = 500
-    @State private var gauge2Value: Double = 75
-    @State private var gauge3Value: Double = 90
-    @State private var gauge4Value: Double = 25
-    @State private var gauge5Value: Double = 10
-
+    @State private var gauge1Values: [Double] = [500]
+    @State private var gauge2Values: [Double] = [75]
+    @State private var gauge3Values: [Double] = [90]
+    @State private var gauge4Values: [Double] = [25]
+    @State private var gauge5Values: [Double] = [10]
+    
     @State private var gauge1Range: ClosedRange<Double> = 0...1000
     @State private var gauge2Range: ClosedRange<Double> = 0...180
     @State private var gauge3Range: ClosedRange<Double> = 0...180
     @State private var gauge4Range: ClosedRange<Double> = 0...180
     @State private var gauge5Range: ClosedRange<Double> = 0...100
 
+    @State private var showSaveFileCreation = false
+    
+    @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                Spacer()
-                Slider(value: Binding(
-                    get: { self.gauge1Range.lowerBound },
-                    set: { self.gauge1Range = $0 ... self.gauge1Range.upperBound }
-                ), in: 0...1000, step: 1)
-                .padding(.horizontal, 20)
-                GaugeView(value: gauge1Value, label: "Current", range: gauge1Range)
-                   
+        NavigationView {
+            ScrollView {
+                LazyVStack {
+                    Spacer()
+                    GaugeView(value: gauge1Values[0], label: "Current", range: gauge1Range)
 
-               
-                GaugeView(value: gauge2Value, label: "X Axis Angle", range: gauge2Range)
+                    GaugeView(value: gauge2Values[0], label: "X Axis Angle", range: gauge2Range)
 
-               
-                GaugeView(value: gauge3Value, label: "Y Axis Angle", range: gauge3Range)
+                    GaugeView(value: gauge3Values[0], label: "Y Axis Angle", range: gauge3Range)
 
-               
-                GaugeView(value: gauge4Value, label: "Z Axis Angle", range: gauge4Range)
+                    GaugeView(value: gauge4Values[0], label: "Z Axis Angle", range: gauge4Range)
 
-                Slider(value: Binding(
-                    get: { self.gauge5Range.lowerBound },
-                    set: { self.gauge5Range = $0 ... self.gauge5Range.upperBound }
-                ), in: 0...100, step: 1)
-                .padding(.horizontal, 20)
-                GaugeView(value: gauge5Value, label: "Rod Left", range: gauge5Range)
-                Spacer()
+                    GaugeView(value: gauge5Values[0], label: "Rod Left", range: gauge5Range)
+
+                    Spacer()
+                }
+                .padding(.vertical, 20)
             }
-            .padding(.vertical, 20)
+            .navigationBarTitle("New Project")
+            .navigationBarItems(trailing: Button("Create Save File") {
+                showSaveFileCreation = true
+            })
+            .sheet(isPresented: $showSaveFileCreation) {
+                SaveFileCreationView()
+            }
+        }
+        .onReceive(timer) { _ in
+            // Update the gauge values here
+            // For example, you can generate random values for each gauge
+            gauge1Values = [Double.random(in: gauge1Range)]
+            gauge2Values = [Double.random(in: gauge2Range)]
+            gauge3Values = [Double.random(in: gauge3Range)]
+            gauge4Values = [Double.random(in: gauge4Range)]
+            gauge5Values = [Double.random(in: gauge5Range)]
         }
     }
 }
